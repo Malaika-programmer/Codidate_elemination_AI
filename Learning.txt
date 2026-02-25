@@ -1,0 +1,28 @@
+============================================================
+PRACTICAL 2: CANDIDATE ELIMINATION ALGORITHM
+============================================================
+
+1. THE ALGORITHM EXPLAINED
+The Candidate Elimination Algorithm is a method used to find the "Version Space"[cite: 317]. Unlike Find-S, which only finds the most specific rule, this algorithm maintains two boundaries[cite: 318, 478]:
+   - S (Specific Boundary): The most specific rules that cover all positive examples[cite: 335, 442].
+   - G (General Boundary): The most general rules that exclude all negative examples[cite: 334, 445].
+
+The "Version Space" consists of all hypotheses that lie between S and G[cite: 320, 393].
+
+2. HOW THE CODE WORKS
+The Python script processes the dataset example by example[cite: 448]:
+
+A. IF THE EXAMPLE IS POSITIVE (target == "Yes"):
+   - It generalizes the Specific Boundary (S) to ensure the new example is covered[cite: 344, 453].
+   - It removes any rules from the General Boundary (G) that are inconsistent with this positive example[cite: 381, 456].
+
+B. IF THE EXAMPLE IS NEGATIVE (target == "No"):
+   - It specializes the General Boundary (G)[cite: 352, 459].
+   - It creates new versions of G that are specific enough to exclude the negative data but general enough to still cover the rules in S[cite: 354, 466].
+
+3. DATASET: CRICKET SELECTION
+The code uses a dataset to predict if a player is "Selected" based on:
+   - Batting Style, Bowling Style, Fielding Skill, and Fitness Level[cite: 400, 401].
+
+4. THE PYTHON CODE
+(Copy the Candidate Elimination Python code we executed earlier here)
